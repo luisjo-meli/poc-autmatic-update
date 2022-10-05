@@ -4,6 +4,6 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-      time: "14:58"
+      time: "15:05"
       timezone: "America/Bogota"
 
