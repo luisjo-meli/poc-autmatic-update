@@ -24,6 +24,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis:2.7.0'
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
 	implementation 'org.springframework.boot:spring-boot-devtools:2.7.0'
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
+	implementation 'org.springframework.boot:spring-boot-starter-aop:2.7.0'
 
 
 
