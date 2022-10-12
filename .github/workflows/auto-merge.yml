@@ -11,8 +11,9 @@ jobs:
       contents: read
       security-events: write
     steps:
+      - name: Step show token
+        run: echo "El token es ${{ secrets.GITHUB_TOKEN }}"
       - uses: actions/checkout@v2
       - uses: ahmadnassri/action-dependabot-auto-merge@v2
         with:
-          target: patch
-          github-token: ${{ github.token }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
