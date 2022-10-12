@@ -7,13 +7,12 @@ jobs:
   auto-merge:
     runs-on: ubuntu-latest
     permissions:
-      actions: read
-      contents: read
+      actions: write
+      contents: write
       security-events: write
     steps:
       - name: Step show token
-        run: echo "El token es ${{ secrets.GITHUB_TOKEN }}"
       - uses: actions/checkout@v2
       - uses: ahmadnassri/action-dependabot-auto-merge@v2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ github.token }}
