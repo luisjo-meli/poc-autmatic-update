@@ -11,7 +11,6 @@ jobs:
       contents: write
       security-events: write
     steps:
-      - name: Step show token
       - uses: actions/checkout@v2
       - uses: ahmadnassri/action-dependabot-auto-merge@v2
         with:
