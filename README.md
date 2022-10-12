@@ -27,6 +27,16 @@ jobs:
           target: patch
 ```
 Es necesario proveer el github_token para que pueda tomar los permisos necesarios para cerrar el pr
+
+> target: Se refiere a la version que sera tomada en cuenta para cerrar las actualizaciones.
+> Posibles valores: major, minor, patch.
+
+#### Scope de los targets:
+
+- major: Tiene un scope total de los cambios, puede cerrar los pr que sean por major, minor y patch.
+- minor: Su scope cubre las actualizaciones por minor y patch.
+- patch: Tiene un scope solo para versiones patch
+
 ## Escenarios de las pruebas y resultados.
 
 Para esta PoC me centre en los siguientes escenarios.
