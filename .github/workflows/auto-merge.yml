@@ -23,9 +23,9 @@ jobs:
           echo "Dependency: ${dependency}"
           echo "::set-output name=branch::feature/dependabot/${dependency}"
       - name: Create new PR
-          uses: actions/github-script@v5
-          with:
-          script: |
+        uses: actions/github-script@v5
+        with:
+        script: |
             const branch = "${{ steps.branch-name.outputs.branch }}";
             console.log(context)
             //Create the new branch

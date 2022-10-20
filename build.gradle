@@ -55,6 +55,9 @@ dependencies {
 // https://mvnrepository.com/artifact/pl.touk.nussknacker/nussknacker-test-utils
 	testImplementation 'pl.touk.nussknacker:nussknacker-test-utils_2.12:1.5.0'
 
+	// https://mvnrepository.com/artifact/app.cash.wisp/wisp-config
+	implementation 'app.cash.wisp:wisp-config:1.2.0'
+
 
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
