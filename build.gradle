@@ -59,7 +59,7 @@ dependencies {
 	implementation 'app.cash.wisp:wisp-config:1.2.0'
 
 	// https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-converter
-	implementation 'ca.uhn.hapi.fhir:hapi-fhir-converter:6.1.0'
+	implementation 'ca.uhn.hapi.fhir:hapi-fhir-converter:6.1.3'
 
 
 	implementation 'org.springframework.boot:spring-boot-starter'
