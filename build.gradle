@@ -82,7 +82,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-activemq:2.7.1'
 
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-gradle-plugin
-	implementation 'org.springframework.boot:spring-boot-gradle-plugin:2.7.1'
+	implementation 'org.springframework.boot:spring-boot-gradle-plugin:2.7.5'
 
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-batch
 	implementation 'org.springframework.boot:spring-boot-starter-batch:2.7.1'
