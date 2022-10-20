@@ -75,6 +75,9 @@ dependencies {
 // https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl
 	implementation 'org.codehaus.jackson:jackson-mapper-asl:1.9.11'
 
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-quartz
+	implementation 'org.springframework.boot:spring-boot-starter-quartz:2.7.1'
+
 
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
