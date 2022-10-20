@@ -69,11 +69,6 @@ jobs:
             });
             
             if("${{ steps.metadata.outputs.update-type }}" == 'version-update:semver-patch') {
-            
-              console.log(github.rest.pulls.merge.endpoint())
-              console.log(github.rest.pulls.merge.defaults())
-            console.log(github.rest.repos.merge.endpoint())
-            console.log(github.rest.repos.merge.defaults())
               await github.rest.pulls.merge({
                 merge_method: "merge",
                 owner: context.repo.owner,
