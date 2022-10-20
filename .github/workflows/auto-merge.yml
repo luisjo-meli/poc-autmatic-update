@@ -75,6 +75,6 @@ jobs:
                 merge_method: "merge",
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                pull_number: result.number,
+                pull_number: result.data.number,
               })
             }
