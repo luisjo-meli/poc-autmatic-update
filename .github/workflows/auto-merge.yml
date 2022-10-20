@@ -1,13 +1,70 @@
-name: auto-merge
-on: [pull_request]
+name: Auto Close Dependabot
+on: [ pull_request ]
 jobs:
-  auto-merge:
-    permissions:
-      contents: write
-      pull-requests: write
+  new-dependabot-pr:
     runs-on: ubuntu-latest
+    if: startsWith(github.head_ref, 'dependabot/')
+    permissions: write-all
     steps:
-      - uses: fastify/github-action-merge-dependabot@v3.2
+      - name: Dependabot metadata
+          id: metadata
+          uses: dependabot/fetch-metadata@v1.1.1
+          with:
+            github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          target: patch
+          ref: ${{ github.ref }}
+      - name: Rename branch
+        id: branch-name
+        run: |
+          IFS='/' read -r -a array <<< "${{ github.head_ref }}"
+          dependency=${array[-1]}
+          echo "Dependency: ${dependency}"
+          echo "::set-output name=branch::feature/dependabot/${dependency}"
+      - name: Create new PR
+          uses: actions/github-script@v5
+          with:
+          script: |
+            const branch = "${{ steps.branch-name.outputs.branch }}";
+            console.log(context)
+            //Create the new branch
+            await github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: context.sha,
+              ref: `refs/heads/${branch}`,
+            });
+            
+            //Create the new PR with fixed branch name
+            const result = await github.rest.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: "${{ steps.branch-name.outputs.branch }}",
+              base: "${{ github.event.repository.default_branch }}",
+              title: "[Dependabot] ${{ github.event.pull_request.title }}",
+              body: ${{ toJSON(github.event.pull_request.body) }},
+            });
+            
+            //Add dependencies label
+            await github.rest.issues.addLabels({
+              issue_number: result.data.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['dependencies']
+            });
+            
+            //Close dependabot pull request
+            await github.rest.pulls.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: ${{ github.event.number }},
+              state: 'closed'
+            })
+            
+            //Delete dependabot branch 
+            await github.rest.git.deleteRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: "heads/${{ github.event.pull_request.head.ref }}"
+            });
