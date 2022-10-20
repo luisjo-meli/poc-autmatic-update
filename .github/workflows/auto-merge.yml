@@ -7,10 +7,10 @@ jobs:
     permissions: write-all
     steps:
       - name: Dependabot metadata
-          id: metadata
-          uses: dependabot/fetch-metadata@v1.1.1
-          with:
-            github-token: "${{ secrets.GITHUB_TOKEN }}"
+        id: metadata
+        uses: dependabot/fetch-metadata@v1.1.1
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
       - name: Checkout
         uses: actions/checkout@v2
         with:
