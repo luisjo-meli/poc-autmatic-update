@@ -64,7 +64,7 @@ dependencies {
 	implementation 'com.typesafe.scala-logging:scala-logging_2.11:3.9.5'
 
 	// https://mvnrepository.com/artifact/org.slf4j/slf4j-ext
-	implementation 'org.slf4j:slf4j-ext:2.0.0'
+	implementation 'org.slf4j:slf4j-ext:2.0.3'
 
 
 	implementation 'org.springframework.boot:spring-boot-starter'
