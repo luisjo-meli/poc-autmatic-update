@@ -60,7 +60,8 @@ dependencies {
 
 	// https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-converter
 	implementation 'ca.uhn.hapi.fhir:hapi-fhir-converter:6.1.0'
-
+// https://mvnrepository.com/artifact/com.typesafe.scala-logging/scala-logging
+	implementation 'com.typesafe.scala-logging:scala-logging_2.11:3.9.5'
 
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
