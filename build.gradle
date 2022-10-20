@@ -79,7 +79,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-quartz:2.7.1'
 
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-activemq
-	implementation 'org.springframework.boot:spring-boot-starter-activemq:2.7.1'
+	implementation 'org.springframework.boot:spring-boot-starter-activemq:2.7.5'
 
 
 	implementation 'org.springframework.boot:spring-boot-starter'
