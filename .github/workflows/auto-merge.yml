@@ -70,7 +70,7 @@ jobs:
             
             if("${{ steps.metadata.outputs.update-type }}" == 'version-update:semver-patch') {
             
-              console.log(result.number)
+              console.log(result)
               await github.rest.pulls.merge({
                 merge_method: "merge",
                 owner: context.repo.owner,
