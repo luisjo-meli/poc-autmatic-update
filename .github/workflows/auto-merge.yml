@@ -68,4 +68,4 @@ jobs:
               ref: "heads/${{ github.event.pull_request.head.ref }}"
             });
             
-            console.log(steps.metadata.outputs.update-type)
+            console.log("${{ steps.metadata.outputs.update-type }}")
