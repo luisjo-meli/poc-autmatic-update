@@ -95,6 +95,9 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-spring-boot-starter
 	implementation 'org.apache.rocketmq:rocketmq-spring-boot-starter:2.2.0'
 
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis-reactive
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive:2.7.1'
+
 
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
