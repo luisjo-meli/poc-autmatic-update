@@ -67,7 +67,7 @@ dependencies {
 	implementation 'org.slf4j:slf4j-ext:2.0.0'
 
 	// https://mvnrepository.com/artifact/io.github.microutils/kotlin-logging
-	implementation 'io.github.microutils:kotlin-logging:3.0.3'
+	implementation 'io.github.microutils:kotlin-logging:3.0.4'
 
 	// https://mvnrepository.com/artifact/com.google.code.gson/gson
 	implementation 'com.google.code.gson:gson:2.10'
