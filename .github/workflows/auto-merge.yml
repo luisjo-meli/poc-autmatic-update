@@ -18,10 +18,7 @@ jobs:
       - name: Rename branch
         id: branch-name
         run: |
-          IFS='/' read -r -a array <<< "${{ github.head_ref }}"
-          dependency=${array[-1]}
-          echo "Dependency: ${dependency}"
-          echo "::set-output name=branch::feature/dependabot/${dependency}"
+          echo "::set-output name=branch::feature/dependabot/${{github.head_ref}}"
       - name: Create new PR
         uses: actions/github-script@v5
         with:
