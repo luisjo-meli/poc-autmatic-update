@@ -56,7 +56,7 @@ dependencies {
 	testImplementation 'pl.touk.nussknacker:nussknacker-test-utils_2.12:1.5.0'
 
 	// https://mvnrepository.com/artifact/app.cash.wisp/wisp-config
-	implementation 'app.cash.wisp:wisp-config:1.2.2'
+	implementation 'app.cash.wisp:wisp-config:1.2.3'
 
 	// https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-converter
 	implementation 'ca.uhn.hapi.fhir:hapi-fhir-converter:6.1.0'
