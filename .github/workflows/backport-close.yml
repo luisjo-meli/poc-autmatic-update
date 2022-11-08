@@ -1,0 +1,38 @@
+name: Empty backport self-closing
+on: [ pull_request ]
+jobs:
+  new-dependabot-pr:
+    runs-on: ubuntu-latest
+    if: startsWith(github.head_ref, 'backport/')
+    permissions: write-all
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Check if there are changes
+        id: changes
+        uses: UnicornGlobal/has-changes-action@v1.0.11
+      - name: Process changes
+        if: steps.changes.outputs.changed == 1
+        run: echo "Changes exist Daniela"
+      - name: Self-closing
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const branch = "${{ steps.branch-name.outputs.branch }}";
+
+            //Close pull request
+            await github.rest.pulls.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: ${{ github.event.number }},
+              state: 'closed'
+            })
+
+            //Delete branch
+            await github.rest.git.deleteRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: "heads/${{ github.event.pull_request.head.ref }}"
+            });
