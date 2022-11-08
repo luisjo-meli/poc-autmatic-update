@@ -14,92 +14,10 @@ repositories {
 }
 
 dependencies {
-
-
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.7.1'
 	implementation 'org.springframework.boot:spring-boot-starter-security:2.7.1'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.7.1'
 	implementation 'org.springframework.boot:spring-boot-starter-web:2.7.1'
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.7.0'
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis
-	implementation 'org.springframework.boot:spring-boot-starter-data-redis:2.7.1'
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
-	implementation 'org.springframework.boot:spring-boot-devtools:2.7.1'
-// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
-	implementation 'org.springframework.boot:spring-boot-starter-aop:2.7.1'
-// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
-	implementation 'org.springframework.boot:spring-boot-starter-validation:2.7.1'
-
-// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-autoconfigure-processor
-	implementation 'org.springframework.boot:spring-boot-autoconfigure-processor:2.7.1'
-
-// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-websocket
-	implementation 'org.springframework.boot:spring-boot-starter-websocket:2.7.0'
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc
-	implementation 'org.springframework.boot:spring-boot-starter-jdbc:2.7.4'
-// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-log4j2
-	implementation 'org.springframework.boot:spring-boot-starter-log4j2:2.7.4'
-// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
-	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.4'
-// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-autoconfigure-processor
-	implementation 'org.springframework.boot:spring-boot-autoconfigure-processor:2.6.12'
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-logging
-	implementation 'org.springframework.boot:spring-boot-starter-logging:2.6.12'
-
-// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-mail
-	implementation 'org.springframework.boot:spring-boot-starter-mail:2.6.12'
-
-// https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-server
-	implementation 'ca.uhn.hapi.fhir:hapi-fhir-server:6.1.0'
-
-// https://mvnrepository.com/artifact/pl.touk.nussknacker/nussknacker-test-utils
-	testImplementation 'pl.touk.nussknacker:nussknacker-test-utils_2.12:1.5.0'
-
-	// https://mvnrepository.com/artifact/app.cash.wisp/wisp-config
-	implementation 'app.cash.wisp:wisp-config:1.2.0'
-
-	// https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-converter
-	implementation 'ca.uhn.hapi.fhir:hapi-fhir-converter:6.1.0'
-// https://mvnrepository.com/artifact/com.typesafe.scala-logging/scala-logging
-	implementation 'com.typesafe.scala-logging:scala-logging_2.11:3.9.5'
-
-	// https://mvnrepository.com/artifact/org.slf4j/slf4j-ext
-	implementation 'org.slf4j:slf4j-ext:2.0.0'
-
-	// https://mvnrepository.com/artifact/io.github.microutils/kotlin-logging
-	implementation 'io.github.microutils:kotlin-logging:3.0.0'
-
-	// https://mvnrepository.com/artifact/com.google.code.gson/gson
-	implementation 'com.google.code.gson:gson:2.10'
-
-// https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl
-	implementation 'org.codehaus.jackson:jackson-mapper-asl:1.9.11'
-
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-quartz
-	implementation 'org.springframework.boot:spring-boot-starter-quartz:2.7.1'
-
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-activemq
-	implementation 'org.springframework.boot:spring-boot-starter-activemq:2.7.1'
-
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-gradle-plugin
-	implementation 'org.springframework.boot:spring-boot-gradle-plugin:2.7.1'
-
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-batch
-	implementation 'org.springframework.boot:spring-boot-starter-batch:2.7.1'
-// https://mvnrepository.com/artifact/org.springframework/spring-context
-	implementation 'org.springframework:spring-context:5.3.14'
-
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-oauth2-client
-	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client:2.7.5'
-
-	// https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-spring-boot-starter
-	implementation 'org.apache.rocketmq:rocketmq-spring-boot-starter:2.2.2'
-
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis-reactive
-	implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive:2.7.5'
-
-
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
