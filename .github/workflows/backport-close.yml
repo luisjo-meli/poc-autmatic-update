@@ -14,9 +14,10 @@ jobs:
         id: changes
         uses: UnicornGlobal/has-changes-action@v1.0.11
       - name: Process changes
-        if: steps.changes.outputs.changed == 1
-        run: echo "Changes exist Daniela"
+        if: steps.changes.outputs.changed == 0
+        run: echo "{ejemplo}={daniela}" >> $GITHUB_OUTPUT
       - name: Self-closing
+        if: steps.changes.outputs.changed == 1
         uses: actions/github-script@v5
         with:
           script: |
