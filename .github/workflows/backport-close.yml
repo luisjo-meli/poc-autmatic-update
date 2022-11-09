@@ -10,9 +10,17 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
+      - name: Check for uncommitted changes
+        id: check-changes
+        uses: mskri/check-uncommitted-changes-action@v1.0.1
+        run: echo "There are uncommitted changes con otra lib"
+      - name: Print uncommitted changes
+        if: steps.check-changes.outputs.changes != ''
+        run: echo "There are uncommitted changes"
       - name: Check if there are changes
         id: changes
         uses: UnicornGlobal/has-changes-action@v1.0.11
+        run: echo "Changes exist Daniela prueba de imp"
       - name: Process changes
         if: steps.changes.outputs.changed == 1
         run: echo "Changes exist Daniela"
