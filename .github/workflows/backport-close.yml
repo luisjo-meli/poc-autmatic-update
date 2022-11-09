@@ -13,11 +13,11 @@ jobs:
       - name: Check release changes
         uses: polytech-com/release-changes-action@v2
         with:
-          target_commitish: ${{ github.head_ref }}
+          target_commitish: "develop"
         id: release
       - name: Process changes
         if: steps.release.outputs.changes == 'false'
-        run: echo "${{ github.head_ref }}" >> $GITHUB_OUTPUT
+        run: echo "{ejemplo}={daniela}" >> $GITHUB_OUTPUT
       - name: Self-closing
         if: steps.release.outputs.changes == 'true'
         uses: actions/github-script@v5
