@@ -17,8 +17,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: steps.release.outputs.changes == 'true'
         with:
-          target_commitish: ${{ github.sha }}
-        run: echo "{ejemplo}={daniela}" >> $GITHUB_OUTPUT
+          target_commitish: ${{ github.ref_name }}
       - name: Self-closing
         if: steps.release.outputs.changes == 'false'
         uses: actions/github-script@v5
