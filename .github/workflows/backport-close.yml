@@ -10,14 +10,17 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
-      - name: Check if there are changes
-        id: changes
-        uses: UnicornGlobal/has-changes-action@v1.0.11
+      - name: Check release changes
+        uses: polytech-com/release-changes-action@v2
+        id: release
       - name: Process changes
-        if: steps.changes.outputs.changed == 0
+        uses: softprops/action-gh-release@v1
+        if: steps.release.outputs.changes == 'true'
+        with:
+          target_commitish: ${{ github.sha }}
         run: echo "{ejemplo}={daniela}" >> $GITHUB_OUTPUT
       - name: Self-closing
-        if: steps.changes.outputs.changed == 1
+        if: steps.release.outputs.changes == 'false'
         uses: actions/github-script@v5
         with:
           script: |
