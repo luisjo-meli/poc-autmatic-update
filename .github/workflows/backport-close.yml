@@ -17,7 +17,7 @@ jobs:
         id: release
       - name: Process changes
         if: steps.release.outputs.changes == 'false'
-        run: echo "{ejemplo}={daniela}" >> $GITHUB_OUTPUT
+        run: echo "${{ github.ref_name }}" >> $GITHUB_OUTPUT
       - name: Self-closing
         if: steps.release.outputs.changes == 'true'
         uses: actions/github-script@v5
