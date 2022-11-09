@@ -13,7 +13,7 @@ jobs:
       - name: Check release changes
         uses: polytech-com/release-changes-action@v2
         with:
-          target_commitish: "develop"
+          target_commitish: "main"
         id: release
       - name: Process changes
         if: steps.release.outputs.changes == 'false'
