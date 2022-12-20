@@ -17,7 +17,7 @@ jobs:
             console.log("entró Daniela")
 
             //Close pull request
-            const files = await github.rest.pulls.files({
+            const files = await github.pulls.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: ${{ github.event.number }}
