@@ -10,10 +10,12 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            console.log("entró Daniela");
-            
-            console.log(context.payload.pull_request.changed_files);
-            
             if(context.payload.pull_request.changed_files == 2) {
-            console.log("entró Daniela donde era");
+              //Close dependabot pull request
+              await github.rest.pulls.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: ${{ github.event.number }},
+                state: 'closed'
+              })
             }
