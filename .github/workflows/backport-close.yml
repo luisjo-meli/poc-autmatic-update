@@ -11,10 +11,11 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
       - name: Self-closing
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           script: |
             console.log("entró Daniela");
+            console.log(context);
 
             //Close pull request
             const files = await github.pulls.get({
