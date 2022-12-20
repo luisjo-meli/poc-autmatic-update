@@ -12,7 +12,7 @@ jobs:
           script: |
             if(context.payload.pull_request.changed_files == 0) {
             
-              //Close backport unchangeda
+              //Close backport unchanged
               await github.rest.pulls.update({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
