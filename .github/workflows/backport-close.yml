@@ -10,32 +10,17 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
-      - name: Check release changes
-        uses: polytech-com/release-changes-action@v2
-        with:
-          target_commitish: "main"
-        id: release
-      - name: Process changes
-        if: steps.release.outputs.changes == 'false'
-        run: echo "{ejemplo}={daniela}" >> $GITHUB_OUTPUT
       - name: Self-closing
-        if: steps.release.outputs.changes == 'true'
         uses: actions/github-script@v5
         with:
           script: |
-            const branch = "${{ steps.branch-name.outputs.branch }}";
+            console.log("entró Daniela")
 
             //Close pull request
-            await github.rest.pulls.update({
+            const files = await github.rest.pulls.files({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              pull_number: ${{ github.event.number }},
-              state: 'closed'
+              pull_number: ${{ github.event.number }}
             })
-
-            //Delete branch
-            await github.rest.git.deleteRef({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              ref: "heads/${{ github.event.pull_request.head.ref }}"
-            });
+            
+            console.log(files)
