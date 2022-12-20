@@ -6,34 +6,25 @@ jobs:
     if: startsWith(github.head_ref, 'backport/')
     permissions: write-all
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
-      - name: Check if there are changes
-        id: changes
-        uses: UnicornGlobal/has-changes-action@v1.0.11
-      - name: Process changes
-        if: steps.changes.outputs.changed == 0
-        run: echo "{ejemplo}={daniela}" >> $GITHUB_OUTPUT
       - name: Self-closing
-        if: steps.changes.outputs.changed == 1
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           script: |
-            const branch = "${{ steps.branch-name.outputs.branch }}";
-
-            //Close pull request
-            await github.rest.pulls.update({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: ${{ github.event.number }},
-              state: 'closed'
-            })
-
-            //Delete branch
-            await github.rest.git.deleteRef({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              ref: "heads/${{ github.event.pull_request.head.ref }}"
-            });
+            if(context.payload.pull_request.changed_files == 0) {
+            
+              //Close backport unchanged
+              await github.rest.pulls.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: ${{ github.event.number }},
+                state: 'closed'
+              })
+            
+              //Delete backport branch 
+              await github.rest.git.deleteRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: "heads/${{ github.event.pull_request.head.ref }}"
+              });
+            
+            }
